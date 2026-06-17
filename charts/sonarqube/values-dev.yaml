@@ -7,9 +7,7 @@ sonarqube:
 #  jdbcUsername: sonarqube
 #  jdbcPassword: sonarqube123
 #
-#  adminPassword: admin
-
-  monitoringPasscode: "admin123"
+#  adminPassword: admin  
 
   jvmOpts: "-Xmx1024m -Xms512m"
 
@@ -19,3 +17,5 @@ sonarqube:
       registry: docker.io
       repository: postgres
       tag: 16.13-alpine
+
+monitoringPasscode: "admin123"
