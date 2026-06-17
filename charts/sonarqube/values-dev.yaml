@@ -1,0 +1,21 @@
+#https://artifacthub.io/packages/helm/sonarqube/sonarqube
+sonarqube:
+  community:
+    enabled: true
+#
+#  jdbcUrl: jdbc:postgresql://postgresql:5432/sonarqube
+#  jdbcUsername: sonarqube
+#  jdbcPassword: sonarqube123
+#
+#  adminPassword: admin
+
+  monitoringPasscode: "admin123"
+
+  jvmOpts: "-Xmx1024m -Xms512m"
+
+  postgresql:
+    enabled: true
+    image:
+      registry: docker.io
+      repository: postgres
+      tag: 16.13-alpine
