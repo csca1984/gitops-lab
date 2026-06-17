@@ -7,7 +7,7 @@ spec:
   project: default
 
   source:
-    repoURL: https://TU_GIT_REPO.git
+    repoURL: https://github.com/csca1984/gitops-lab.git
     targetRevision: main
     path: applications
 
