@@ -1,0 +1,50 @@
+image:
+  repository: sonatype/nexus3
+  tag: latest
+  pullPolicy: IfNotPresent
+
+deployment:
+  replicaCount: 1
+
+service:
+  type: ClusterIP
+  port: 8081
+
+nexus:
+  env:
+    - name: INSTALL4J_ADD_VM_PARAMS
+      value: >-
+        -Xms256m
+        -Xmx512m
+
+persistence:
+  enabled: true
+  size: 2Gi
+  storageClass: ""
+
+resources:
+  requests:
+    cpu: 250m
+    memory: 512Mi
+  limits:
+    cpu: 500m
+    memory: 768Mi
+
+ingress:
+  enabled: false
+
+serviceAccount:
+  create: true
+
+securityContext:
+  fsGroup: 200
+
+containerSecurityContext:
+  runAsUser: 200
+  runAsNonRoot: true
+
+livenessProbe:
+  initialDelaySeconds: 180
+
+readinessProbe:
+  initialDelaySeconds: 90
